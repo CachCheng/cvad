@@ -1,0 +1,13 @@
+cd experiments
+
+# 1
+sh train_torch.sh 4 0,1,2,3,4
+
+# 2
+sh vis_decoder_torch.sh 4 0,1,2,3,4 PFL
+
+# 4
+sh vis_recon_torch.sh PFL
+
+# 3
+sh vis_query_torch.sh PFL
