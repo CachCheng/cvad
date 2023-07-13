@@ -29,7 +29,7 @@ from utils.misc_helper import (
 from utils.optimizer_helper import get_optimizer
 
 parser = argparse.ArgumentParser(description="UniAD Framework")
-parser.add_argument("--config", default="../config/vis_decoder_config.yaml")
+parser.add_argument("--config", default="../configs/vis_decoder_config.yaml")
 parser.add_argument("--class_name", default="")
 parser.add_argument("-v", "--visualization", action="store_true")
 parser.add_argument("--local_rank", default=None, help="local rank for dist")

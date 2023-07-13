@@ -14,7 +14,7 @@ from torch import nn
 from utils.misc_helper import create_logger
 
 parser = argparse.ArgumentParser(description="UniAD")
-parser.add_argument("--config", default="../config/vis_query_config.yaml")
+parser.add_argument("--config", default="../configs/vis_query_config.yaml")
 parser.add_argument("--class_name", default="bottle")
 
 
