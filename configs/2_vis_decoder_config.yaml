@@ -50,7 +50,7 @@ trainer:
 # Optional, set False to disable
 visualization:
   vis_freq_epoch: 10
-  vis_dir: vis
+  vis_dir: ../2_vis
 
 saver:
   auto_resume: True
