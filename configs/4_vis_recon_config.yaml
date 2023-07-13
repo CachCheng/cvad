@@ -8,7 +8,7 @@ data:
   pixel_std: [0.229, 0.224, 0.225]
 
 saver:
-  load_path: ../2_checkpoints/{class_name}/2_vis_decoder_ckpt.pth
+  load_path: ../2_checkpoints/{class_name}/model_ckpt_best.pth
   save_dir: ../4_result_vis_recon
   log_dir: ../4_log
 

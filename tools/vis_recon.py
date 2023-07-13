@@ -13,7 +13,7 @@ from easydict import EasyDict
 from utils.misc_helper import create_logger
 
 parser = argparse.ArgumentParser(description="UniAD")
-parser.add_argument("--config", default="../configs/vis_recon_config.yaml")
+parser.add_argument("--config", default="../configs/4_vis_recon_config.yaml")
 parser.add_argument("--class_name", default="PFL")
 
 

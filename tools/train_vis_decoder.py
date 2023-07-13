@@ -29,7 +29,7 @@ from utils.misc_helper import (
 from utils.optimizer_helper import get_optimizer
 
 parser = argparse.ArgumentParser(description="UniAD Framework")
-parser.add_argument("--config", default="../configs/vis_decoder_config.yaml")
+parser.add_argument("--config", default="../configs/2_vis_decoder_config.yaml")
 parser.add_argument("--class_name", default="")
 parser.add_argument("-v", "--visualization", action="store_true")
 parser.add_argument("--local_rank", default=None, help="local rank for dist")
@@ -128,7 +128,7 @@ def main():
 
     if resume_model and not resume_model.startswith("/"):
         resume_model = os.path.join(config.exp_path, resume_model)
-    lastest_model = os.path.join(config.save_path, "2_vis_decoder_ckpt.pth")
+    lastest_model = os.path.join(config.save_path, "model_ckpt_best.pth")
     if auto_resume and os.path.exists(lastest_model):
         resume_model = lastest_model
     if resume_model:

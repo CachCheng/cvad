@@ -54,7 +54,7 @@ trainer:
 saver:
   auto_resume: False
   always_save: False
-  load_path: ../1_checkpoints/1_train_ckpt.pth
+  load_path: ../1_checkpoints/model_ckpt_best.pth
   save_dir: ../1_checkpoints/
   log_dir: ../1_log/
 

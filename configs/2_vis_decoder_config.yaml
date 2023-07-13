@@ -55,7 +55,7 @@ visualization:
 saver:
   auto_resume: True
   always_save: False
-  # load_path: ../2_checkpoints/2_vis_decoder_ckpt.pth
+  # load_path: ../2_checkpoints/model_ckpt_best.pth
   save_dir: ../2_checkpoints/
   log_dir: ../2_log/
 

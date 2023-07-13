@@ -6,12 +6,12 @@ data:
   pixel_std: [0.229, 0.224, 0.225]
 
 saver:
-  load_path: ../2_checkpoints/{class_name}/2_vis_decoder_ckpt.pth
+  load_path: ../2_checkpoints/{class_name}/model_ckpt_best.pth
   save_dir: ../3_result_vis_query
   log_dir: ../3_log
 
 vis_query:
-  model_path: ../1_checkpoints/1_train_ckpt.pth
+  model_path: ../1_checkpoints/model_ckpt_best.pth
   hidden_dim: 256
   num_decoder_layers: 4
   with_text: True
