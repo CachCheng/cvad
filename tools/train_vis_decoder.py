@@ -30,9 +30,9 @@ from utils.optimizer_helper import get_optimizer
 
 parser = argparse.ArgumentParser(description="UniAD Framework")
 parser.add_argument("--config", default="../configs/2_vis_decoder_config.yaml")
-parser.add_argument("--class_name", default="")
+parser.add_argument("--class_name", default="PFL")
 parser.add_argument("-v", "--visualization", action="store_true")
-parser.add_argument("--local_rank", default=None, help="local rank for dist")
+parser.add_argument("--local_rank", default=0, help="local rank for dist")
 
 
 class_name_list = [
@@ -69,8 +69,8 @@ def main():
     rank, world_size = setup_distributed(port=config.port)
     config = update_config(config)
 
-    config.exp_path = os.path.join(os.path.dirname(args.config), args.class_name)
-    config.save_path = os.path.join(config.exp_path, config.saver.save_dir)
+    config.exp_path = os.path.dirname(args.config)
+    config.save_path = os.path.join(config.exp_path, config.saver.save_dir, args.class_name)
     config.log_path = os.path.join(config.exp_path, config.saver.log_dir)
     if rank == 0:
         os.makedirs(config.save_path, exist_ok=True)
