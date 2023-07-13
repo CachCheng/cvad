@@ -31,7 +31,7 @@ from utils.optimizer_helper import get_optimizer
 from utils.vis_helper import visualize_compound, visualize_single
 
 parser = argparse.ArgumentParser(description="UniAD Framework")
-parser.add_argument("--config", default="./1_train_config.yaml")
+parser.add_argument("--config", default="../config/1_train_config.yaml")
 parser.add_argument("-e", "--evaluate", action="store_true")
 parser.add_argument("--local_rank", default=None, help="local rank for dist")
 
