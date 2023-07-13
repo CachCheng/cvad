@@ -128,7 +128,7 @@ def main():
 
     if resume_model and not resume_model.startswith("/"):
         resume_model = os.path.join(config.exp_path, resume_model)
-    lastest_model = os.path.join(config.save_path, "ckpt.pth.tar")
+    lastest_model = os.path.join(config.save_path, "2_vis_decoder_ckpt.pth")
     if auto_resume and os.path.exists(lastest_model):
         resume_model = lastest_model
     if resume_model:

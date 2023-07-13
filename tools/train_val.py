@@ -31,7 +31,7 @@ from utils.optimizer_helper import get_optimizer
 from utils.vis_helper import visualize_compound, visualize_single
 
 parser = argparse.ArgumentParser(description="UniAD Framework")
-parser.add_argument("--config", default="./train_val_config.yaml")
+parser.add_argument("--config", default="./1_train_config.yaml")
 parser.add_argument("-e", "--evaluate", action="store_true")
 parser.add_argument("--local_rank", default=None, help="local rank for dist")
 
@@ -109,7 +109,7 @@ def main():
 
     if resume_model and not resume_model.startswith("/"):
         resume_model = os.path.join(config.exp_path, resume_model)
-    lastest_model = os.path.join(config.save_path, "ckpt.pth.tar")
+    lastest_model = os.path.join(config.save_path, "1_train_ckpt.pth")
     if auto_resume and os.path.exists(lastest_model):
         resume_model = lastest_model
     if resume_model:

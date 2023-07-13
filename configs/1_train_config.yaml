@@ -8,18 +8,18 @@ dataset:
   image_reader:
     type: opencv
     kwargs:
-      image_dir: ../../../all_datasets/MVTec-AD/mvtec/
+      image_dir: ../../all_datasets/MVTec-AD/mvtec/
       color_mode: RGB
 
   train:
-    meta_file: ../../../all_datasets/MVTec-AD/train.json
+    meta_file: ../../all_datasets/MVTec-AD/train.json
     rebalance: False
-    hflip: False
+    hflip: True
     vflip: False
     rotate: False
 
   test:
-    meta_file: ../../../all_datasets/MVTec-AD/test.json
+    meta_file: ../../all_datasets/MVTec-AD/test.json
 
   input_size: [224,224] # [h,w]
   pixel_mean: [0.485, 0.456, 0.406]
@@ -54,12 +54,12 @@ trainer:
 saver:
   auto_resume: False
   always_save: False
-  load_path: checkpoints/ckpt.pth.tar
-  save_dir: checkpoints/
-  log_dir: log/
+  load_path: ../1_checkpoints/1_train_ckpt.pth
+  save_dir: ../1_checkpoints/
+  log_dir: ../1_log/
 
 evaluator:
-  save_dir: result_eval_temp
+  save_dir: ../1_result_eval_temp
   key_metric: mean_pixel_auc
   metrics:
     auc:
@@ -69,7 +69,7 @@ evaluator:
           avgpool_size: [16, 16]
       - name: pixel
   vis_compound:
-    save_dir: vis_compound
+    save_dir: ../1_vis_compound
     max_score: null
     min_score: null
   # vis_single:
@@ -96,7 +96,7 @@ net:
     - name: reconstruction
       prev: neck
       type: models.reconstructions.UniAD
-      kwargs: 
+      kwargs:
         pos_embed_type: learned
         hidden_dim: 256
         nhead: 8
@@ -113,6 +113,6 @@ net:
           neighbor_size: [7,7]
           mask: [True, True, True] # whether use mask in [enc, dec1, dec2]
         save_recon:
-          save_dir: result_recon
+          save_dir: ../1_result_recon
         initializer:
           method: xavier_uniform

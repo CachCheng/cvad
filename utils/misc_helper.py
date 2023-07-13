@@ -75,11 +75,11 @@ class AverageMeter(object):
 def save_checkpoint(state, is_best, config):
     folder = config.save_path
 
-    torch.save(state, os.path.join(folder, "ckpt.pth.tar"))
+    torch.save(state, os.path.join(folder, "model_ckpt.pth"))
     if is_best:
         shutil.copyfile(
-            os.path.join(folder, "ckpt.pth.tar"),
-            os.path.join(folder, "ckpt_best.pth.tar"),
+            os.path.join(folder, "model_ckpt.pth"),
+            os.path.join(folder, "model_ckpt_best.pth"),
         )
 
     if config.saver.get(
@@ -87,8 +87,8 @@ def save_checkpoint(state, is_best, config):
     ):  # default: save checkpoint after validate()
         epoch = state["epoch"]
         shutil.copyfile(
-            os.path.join(folder, "ckpt.pth.tar"),
-            os.path.join(folder, f"ckpt_{epoch}.pth.tar"),
+            os.path.join(folder, "model_ckpt.pth"),
+            os.path.join(folder, f"model_ckpt_{epoch}.pth"),
         )
 
 

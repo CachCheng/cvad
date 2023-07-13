@@ -8,11 +8,11 @@ dataset:
   image_reader:
     type: opencv
     kwargs:
-      image_dir: ../../../all_datasets/MVTec-AD/mvtec/
+      image_dir: ../../all_datasets/MVTec-AD/mvtec/
       color_mode: RGB
 
   train:
-    meta_file: ../../../all_datasets/MVTec-AD/json_vis_decoder/test_{class_name}.json
+    meta_file: ../../all_datasets/MVTec-AD/json_vis_decoder/test_{class_name}.json
     rebalance: False
     hflip: False
     vflip: False
@@ -55,9 +55,9 @@ visualization:
 saver:
   auto_resume: True
   always_save: False
-  # load_path: checkpoints/ckpt_best.pth.tar
-  save_dir: checkpoints/
-  log_dir: log/
+  # load_path: ../2_checkpoints/2_vis_decoder_ckpt.pth
+  save_dir: ../2_checkpoints/
+  log_dir: ../2_log/
 
 frozen_layers: [backbone]
 

@@ -1,20 +1,16 @@
 version: v1.0.0
 
 data:
-  input_size: [224, 224] # [h,w]
+  dataset_dir: ../../all_datasets/MVTec-AD/mvtec/
+  feature_dir: ../1_result_recon/
+  input_size: [224,224] # [h,w]
   pixel_mean: [0.485, 0.456, 0.406]
   pixel_std: [0.229, 0.224, 0.225]
 
 saver:
-  load_path: ../train_vis_decoder/{class_name}/checkpoints/ckpt.pth.tar
-  save_dir: result_vis_query
-  log_dir: log
-
-vis_query:
-  model_path: ../MVTec-AD/checkpoints/ckpt.pth.tar
-  hidden_dim: 256
-  num_decoder_layers: 4
-  with_text: True
+  load_path: ../2_checkpoints/{class_name}/2_vis_decoder_ckpt.pth
+  save_dir: ../4_result_vis_recon
+  log_dir: ../4_log
 
 net:
   - name: backbone
