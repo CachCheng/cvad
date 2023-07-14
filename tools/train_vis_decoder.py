@@ -30,28 +30,32 @@ from utils.optimizer_helper import get_optimizer
 
 parser = argparse.ArgumentParser(description="UniAD Framework")
 parser.add_argument("--config", default="../configs/2_vis_decoder_config.yaml")
-parser.add_argument("--class_name", default="PFL")
+parser.add_argument("--class_name", default="11")
 parser.add_argument("-v", "--visualization", action="store_true")
 parser.add_argument("--local_rank", default=0, help="local rank for dist")
 
 
 class_name_list = [
-    "bottle",
-    "cable",
-    "capsule",
-    "carpet",
-    "grid",
-    "hazelnut",
-    "leather",
-    "metal_nut",
-    "pill",
-    "screw",
-    "tile",
-    "toothbrush",
-    "transistor",
-    "wood",
-    "zipper",
-    "PFL",
+    "11",
+    "11_Pro",
+    "12",
+    "12_Pro_Max",
+    # "bottle",
+    # "cable",
+    # "capsule",
+    # "carpet",
+    # "grid",
+    # "hazelnut",
+    # "leather",
+    # "metal_nut",
+    # "pill",
+    # "screw",
+    # "tile",
+    # "toothbrush",
+    # "transistor",
+    # "wood",
+    # "zipper",
+    # "PFL",
 ]
 
 
