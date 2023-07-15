@@ -36,10 +36,6 @@ parser.add_argument("--local_rank", default=0, help="local rank for dist")
 
 
 class_name_list = [
-    "11",
-    "11_Pro",
-    "12",
-    "12_Pro_Max",
     # "bottle",
     # "cable",
     # "capsule",
@@ -55,7 +51,7 @@ class_name_list = [
     # "transistor",
     # "wood",
     # "zipper",
-    # "PFL",
+    "PFL",
 ]
 
 
